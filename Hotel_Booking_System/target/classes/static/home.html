@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CloudMind - File Manager</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f8f9fb;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      background: #fff;
+      width: 250px;
+      border-right: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 0 0 0;
+    }
+    .logo {
+      font-size: 1.7em;
+      font-weight: 700;
+      padding-left: 32px;
+      margin-bottom: 38px;
+      color: #222d3b;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      padding: 14px 32px;
+      cursor: pointer;
+      font-size: 1.08em;
+      color: #222d3b;
+      border-left: 4px solid transparent;
+      transition: background 0.2s;
+    }
+    .sidebar li.active,
+    .sidebar li:hover {
+      background: #f0f4fa;
+      border-left: 4px solid #2e93fa;
+      font-weight: 600;
+    }
+    .main-content {
+      flex: 1;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 34px 28px 24px 28px;
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .title {
+      font-size: 2em;
+      font-weight: 600;
+      flex: 1;
+    }
+    .search {
+      padding: 10px 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: 7px;
+      font-size: 1em;
+      margin-right: 18px;
+      background: #fafbfc;
+    }
+    .upload {
+      background: #4ea4f9;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 28px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .upload:hover {
+      background: #3283e6;
+    }
+    .files-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      background: #f8f9fb;
+    }
+    .no-files {
+      text-align: center;
+      border: 1px dashed #ccd6df;
+      border-radius: 14px;
+      padding: 58px 78px;
+      background: #fff;
+    }
+    .nofile-icon {
+      display: inline-block;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .nofile-title {
+      font-size: 1.13em;
+      font-weight: 600;
+      margin-bottom: 3px;
+      color: #1c2331;
+    }
+    .nofile-msg {
+      color: #6f7888;
+      font-size: 0.99em;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">CloudMind</div>
+      <nav>
+        <ul>
+          <li class="active">My Files</li>
+          <li>Categorize Doc</li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="header">
+        <span class="title">My Files</span>
+        <input type="text" class="search" placeholder="Search by name or tag..." />
+        <button class="upload">Upload</button>
+      </header>
+      <section class="files-section">
+        <div class="no-files">
+          <span class="nofile-icon">📄</span>
+          <p class="nofile-title">No Files Found</p>
+          <p class="nofile-msg">Upload a file to get started or try a different search term.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
