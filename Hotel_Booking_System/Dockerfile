@@ -1,9 +1,12 @@
-FROM eclipse-temurin:21-jre
+spring.application.name=Hotel_Booking_System
 
-WORKDIR /app
+server.port=8080
 
-COPY target/*.jar app.jar
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+spring.datasource.driver-class-name=org.postgresql.Driver
 
-EXPOSE 8080
-
-CMD ["java", "-jar", "app.jar"]
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.show-sql=true
